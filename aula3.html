@@ -23,6 +23,7 @@
     <p id="ex1">1 - Alterar o texto do "menu 1" pra item 1</p>
     <p id="ex2">2 - terar o texto do "Menu 2" para item 2 atraves da tag.</p>
     <p id="ex3">3 - Inserur parênteses () nos comandos da classe "comandos" </p>
+  <p id="ex4">4 - Alterar a cor do id "ex1", do segundo item da classe "comandos" para verde</p>
   </div>
 </body>
 <script>
@@ -32,6 +33,9 @@
   document.getElementsByClassName("comandos")[0].innerHTML = document.getElementsByClassName("comandos")[0].innerHTML +"()";
   document.getElementsByClassName("comandos")[1].innerHTML = document.getElementsByClassName("comandos")[1].innerHTML +"()";
   document.getElementsByClassName("comandos")[2].innerHTML = document.getElementsByClassName("comandos")[2].innerHTML + "()";
-  </script>
+  document.getElementById("ex1").style.color = "aquamarine";
+  document.getElementsByClassName("comandos")[1].style.color = "green";
+ 
+ </script>
 
 </html>
