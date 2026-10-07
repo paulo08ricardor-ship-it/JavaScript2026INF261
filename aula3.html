@@ -20,15 +20,18 @@
     <p>Comandos para pegar os elementos.</p>
   </main>
   <div>
-    <p id="ex1"> -Alterar o texto do "menu 1" pra item 1</p>
-    <p id="ex2"> -Alterar o texto do "Menu 2" para item 2 atraves da tag.</p>
-    <p id="ex3"> </p>
+    <p id="ex1">1 - Alterar o texto do "menu 1" pra item 1</p>
+    <p id="ex2">2 - terar o texto do "Menu 2" para item 2 atraves da tag.</p>
+    <p id="ex3">3 - Inserur parênteses () nos comandos da classe "comandos" </p>
   </div>
 </body>
 <script>
   document.getElementsByTagName("p")[0].innerHTML = "Item 1";
   document.getElementsByTagName("p")[1].innerHTML = "Item 2";
   document.getElementById("p3").innerHTML = "item 3";
-</script>
+  document.getElementsByClassName("comandos")[0].innerHTML = document.getElementsByClassName("comandos")[0].innerHTML +"()";
+  document.getElementsByClassName("comandos")[1].innerHTML = document.getElementsByClassName("comandos")[1].innerHTML +"()";
+  document.getElementsByClassName("comandos")[2].innerHTML = document.getElementsByClassName("comandos")[2].innerHTML + "()";
+  </script>
 
 </html>
