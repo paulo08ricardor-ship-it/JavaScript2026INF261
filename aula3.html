@@ -34,6 +34,11 @@
       cor do texto vermelho.</p>
     <p id="ex9">9 - Alterar os exercícios 1 e 2 para veriáveis</p>
     <p id="ex10">10 - Ativar os Botões para div</p>
+    <p id="ex11">11 - Inserir um evento para quando passar o mouse por cima: Inserir uma bordar
+                      e cor de fundo no "Aula 3 - Javascript DOM.", e quando o mouse sair de cima
+                      voltar ao estado original
+                           
+    </p>
 
   </div>
 
@@ -68,8 +73,17 @@
   document.querySelectorAll("button")[0].addEventListener("click" , function() {
     document.querySelectorAll("div")[0].style.display = "none";
   } )
-    document.querySelectorAll("button")[1].addEventListener("click" , function() {
+  document.querySelectorAll("button")[1].addEventListener("click" , function() {
     document.querySelectorAll("div")[0].style.display = "block";
+  } )
+
+  document.querySelectorAll("h2")[0].addEventListener("mouseenter" , function() {
+    document.querySelectorAll("h2")[0].style.backgroundColor = "yellow";
+    document.querySelectorAll("h2")[0].style.border = "2px solid red";
+  } )
+    document.querySelectorAll("h2")[0].addEventListener("mouseleave" , function() {
+    document.querySelectorAll("h2")[0].style.backgroundColor = "";
+    document.querySelectorAll("h2")[0].style.border = "";
   } )
   
 
