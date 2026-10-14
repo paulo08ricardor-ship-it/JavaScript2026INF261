@@ -12,8 +12,8 @@
       <p id="p3">menu 3</p>
     </nav>
   </header>
-    <button>Ocultar div</button>
-    <button>Revelar div</button>
+    <button >Ocultar div</button>
+    <button >Revelar div</button>
   <main>
     <h2 id="titulo">Aula 3 - Javascript DOM</h2>
     <p class="comandos">getElementById</p>
@@ -63,7 +63,15 @@
   let Itens12 = document.getElementsByTagName("p");
   Itens12[0].innerHTML = "Item 1";
   Itens12[1].innerHTML = "Item 2";
+
   //let revelarOcultar = ;
+  document.querySelectorAll("button")[0].addEventListener("click" , function() {
+    document.querySelectorAll("div")[0].style.display = "none";
+  } )
+    document.querySelectorAll("button")[1].addEventListener("click" , function() {
+    document.querySelectorAll("div")[0].style.display = "block";
+  } )
+  
 
   
 </script>
