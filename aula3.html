@@ -3,6 +3,29 @@
 <head>
 
 </head>
+<style>
+  .contador-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .numero {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+</style>
 
 <body>
   <header>
@@ -12,8 +35,8 @@
       <p id="p3">menu 3</p>
     </nav>
   </header>
-    <button >Ocultar div</button>
-    <button >Revelar div</button>
+  <button>Ocultar div</button>
+  <button>Revelar div</button>
   <main>
     <h2 id="titulo">Aula 3 - Javascript DOM</h2>
     <p class="comandos">getElementById</p>
@@ -35,11 +58,16 @@
     <p id="ex9">9 - Alterar os exercícios 1 e 2 para veriáveis</p>
     <p id="ex10">10 - Ativar os Botões para div</p>
     <p id="ex11">11 - Inserir um evento para quando passar o mouse por cima: Inserir uma bordar
-                      e cor de fundo no "Aula 3 - Javascript DOM.", e quando o mouse sair de cima
-                      voltar ao estado original
-                           
+      e cor de fundo no "Aula 3 - Javascript DOM.", e quando o mouse sair de cima
+      voltar ao estado original
+    <p id="exe12">12 - fazer um contador de visitantes para o site</p>
     </p>
 
+  </div>
+  <div class="contador-container">
+    <h2>Você visitou esta página</h2>
+    <div id="contador" class="numero">0</div>
+    <h2>vezes</h2>
   </div>
 
 </body>
@@ -70,24 +98,44 @@
   Itens12[1].innerHTML = "Item 2";
 
   //let revelarOcultar = ;
-  document.querySelectorAll("button")[0].addEventListener("click" , function() {
+  document.querySelectorAll("button")[0].addEventListener("click", function () {
     document.querySelectorAll("div")[0].style.display = "none";
-  } )
-  document.querySelectorAll("button")[1].addEventListener("click" , function() {
+  })
+  document.querySelectorAll("button")[1].addEventListener("click", function () {
     document.querySelectorAll("div")[0].style.display = "block";
-  } )
+  })
 
-  document.querySelectorAll("h2")[0].addEventListener("mouseenter" , function() {
+  document.querySelectorAll("h2")[0].addEventListener("mouseenter", function () {
     document.querySelectorAll("h2")[0].style.backgroundColor = "yellow";
     document.querySelectorAll("h2")[0].style.border = "2px solid red";
-  } )
-    document.querySelectorAll("h2")[0].addEventListener("mouseleave" , function() {
+  })
+  document.querySelectorAll("h2")[0].addEventListener("mouseleave", function () {
     document.querySelectorAll("h2")[0].style.backgroundColor = "";
     document.querySelectorAll("h2")[0].style.border = "";
-  } )
-  
+  })
+  function contarVisitas() {
+    // Verifica se já existe uma contagem no LocalStorage
+    let visitas = localStorage.getItem('contadorVisitas');
 
-  
+    if (visitas) {
+      // Se existir, soma 1 (converte para número primeiro)
+      visitas = parseInt(visitas) + 1;
+    } else {
+      // Se não existir (primeira vez), começa com 1
+      visitas = 1;
+    }
+
+    // Salva o novo valor atualizado no LocalStorage
+    localStorage.setItem('contadorVisitas', visitas);
+
+    // Exibe o valor na tela
+    document.getElementById('contador').innerText = visitas;
+  }
+
+  // Executa a função assim que a página carrega
+  window.onload = contarVisitas;
+
+
 </script>
 
 </html>
