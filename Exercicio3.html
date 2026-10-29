@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+  <div>
+    <img id="imagem"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEnPaBMwFoECEXhgKNIs0nlzNEXTyjqx_-nlNbuq_sqt_iP11SfnztzAUyf_MWLMGXrhYT57PGnF5j0tla4VJW8lj6RWy0_WSlnnCWvys&s=10"
+      alt="cachorro" style="width: 500px; height: 250px;">
+
+  </div>
+  <div>
+    <button id="Aumentar">Aumentar</button>
+    <button id="diminuir">diminuir</button>
+    <h3>Tamanho: <span id="textoTamanho">500px</span></h3>
+  </div>
+  <script>
+    const aumentar = document.querySelector("#Aumentar");
+    const diminuir = document.querySelector("#diminuir");
+    const imagem = document.getElementById("imagem");
+    const textoTamanho = document.getElementById("textoTamanho");
+    aumentar.addEventListener("click", function () {
+      let larguraAtual = imagem.clientWidth;
+      let novalargura = larguraAtual ;
+      if (novalargura <= 770) {
+        novalargura = novalargura + 30
+      }
+      imagem.style.width = novalargura + "px";
+      textoTamanho.innerHTML = novalargura + "px";
+
+    })
+    diminuir.addEventListener("click", function () {
+      let larguraAtual = imagem.clientWidth;
+      let novalargura = larguraAtual;
+      if (novalargura >= 230) {
+        novalargura = novalargura - 30
+      }
+      imagem.style.width = novalargura + "px";
+      textoTamanho.innerHTML = novalargura + "px";
+
+    })
+    let btRedefinir = document.createElement("button");
+    btRedefinir.textContent = "Redefinir";
+    document.body.appendChild(btRedefinir);
+    btRedefinir.addEventListener("click", function(){
+      imagem.style.width = "500px";
+      textoTamanho.innerHTML = imagem.width;
+
+    })
+
+
+  </script>
+</body>
+
+</html>
